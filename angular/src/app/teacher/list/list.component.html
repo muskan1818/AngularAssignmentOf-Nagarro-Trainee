@@ -1,0 +1,40 @@
+<main id="main" class="d-flex justify-content-between m-3">
+    <div>
+        <button type="button" routerLink="/teacher/create" class="btn btn-primary btn-lg border border-dark left">Add
+            Record</button>
+    </div>
+    <div>
+        <button type="button" (click)="service.logout()"
+            class="btn btn-outline-success btn-lg border border-dark left">Logout</button>
+    </div>
+</main>
+
+<div class="conatiner table-container d-flex flex-column align-items-center">
+    <caption id="caption">
+        <h6 *ngIf="list?.length > 0">Total {{list.length}} Students</h6>
+    </caption>
+    <table class="table table-bordered w-75 m-2">
+        <thead>
+            <tr>
+                <th scope="col">Roll No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Date Of Birth</th>
+                <th scope="col">Score</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of list">
+                <td scope="col">{{student.rollNo}}</td>
+                <td scope="col">{{student.name}}</td>
+                <td scope="col">{{student.dob | date: 'dd/MM/yyyy'}}</td>
+                <td scope="col">{{student.score}}</td>
+                <td><button class="border-0" routerLink="/teacher/update/{{student.rollNo}}"><img
+                            src="https://img.icons8.com/material-outlined/24/000000/edit--v1.png" /></button>&nbsp;&nbsp;
+                    <button class="border-0" (click)="deleteStudent(student.rollNo)"><img
+                            src="https://img.icons8.com/material-rounded/24/000000/delete-sign.png" /></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

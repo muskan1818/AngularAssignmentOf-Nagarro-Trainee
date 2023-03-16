@@ -1,0 +1,36 @@
+<main id="main" class="d-flex justify-content-end m-3">
+    <div>
+        <button type="button" routerLink="/" class="btn btn-outline-success btn-lg border border-dark left">Logout</button>
+    </div>
+</main>
+<div *ngIf="searchedStudent" class="alert alert-danger alert-dismissible fade show d-flex justify-content-around" role="alert">
+    <div><strong>Hey!</strong> The student details are not available, Please try again!</div>  
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <div class="container form-container h-50">
+      <h4>Search Result</h4>
+      <form ngNativeValidate [formGroup]="searchResult" #searchForm="ngForm" (ngSubmit)="search(); searchForm.reset()" method="post" class="h-50 d-flex flex-column justify-content-around">
+          <div class="form-group row">
+            <label for="roll" class="col-sm-2 col-form-label">Roll No.</label>
+            <div class="col-sm-10">
+              <input type="number" name="rollNo" formControlName="rollNo" class="form-control" id="roll" placeholder="Enter Your Roll Number" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" name="name" pattern="[a-zA-Z\s]+" class="form-control" formControlName="name" id="name" placeholder="Enter Your Name" required>
+            </div>
+          </div>
+          
+          <div class="form-group row">
+            <div class="col-sm-10 d-flex justify-content-center">
+              <button type="submit" class="btn btn-lg btn-primary">Search</button> &nbsp;
+              <button type="reset" class="btn btn-lg btn-primary">Clear</button>
+            </div>
+          </div>
+        </form>
+        
+  </div>

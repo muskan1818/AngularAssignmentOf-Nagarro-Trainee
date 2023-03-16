@@ -1,0 +1,51 @@
+<main id="main" class="d-flex justify-content-between m-3">
+    <div class="m-4"><a routerLink="/teacher/list">Back</a></div>
+    <div>
+        <button type="button" (click)="service.logout()" class="btn btn-outline-success btn-lg border border-dark left">Logout</button>
+    </div>
+</main>
+<div *ngIf="studentDataPosted" class="alert alert-danger alert-dismissible fade show d-flex justify-content-around" role="alert">
+  <div><strong>Hey!</strong> The student details are already available, Please try again!</div>  
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  
+
+<div class="container form-container">
+    <h4>Add New Result</h4>
+    <form ngNativeValidate [formGroup]="studentPost" #studentForm="ngForm" (ngSubmit)="studentData(); studentForm.reset()" id="forms" method="post" class=" h-50 d-flex flex-column justify-content-around">
+        <div class="form-group row">
+          <label for="rollNo" class="col-sm-2 col-form-label">Roll No.</label>
+          <div class="col-sm-10">
+            <input type="number" name="rollNo"  class="form-control" formControlName="rollNo" id="roll" placeholder="Enter Student's Roll Number" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="name" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="name" formControlName="name" id="name" pattern="[a-zA-Z\s]+" placeholder="Enter Student's Name" required>
+          </div>
+        </div>
+        <div class="form-group row">
+            <label for="dob" class="col-sm-2 col-form-label">Date Of Birth</label>
+            <div class="col-sm-10">
+              <input type="date" name="dob" formControlName="dob" class="form-control" id="dob" placeholder="" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="score" class="col-sm-2 col-form-label">Score</label>
+            <div class="col-sm-10">
+
+              <input type="Number" 
+              
+               name="score" class="form-control" id="score" formControlName="score" placeholder="Enter Student's Score" required>
+            </div>
+          </div>
+        <div class="form-group row">
+          <div class="col-sm-10 d-flex justify-content-center">
+            <button type="submit" class="btn btn-lg btn-primary">Submit</button> &nbsp;&nbsp;&nbsp;
+            <button type="clear" class="btn btn-lg btn-primary">Clear</button>
+          </div>
+        </div>
+      </form>

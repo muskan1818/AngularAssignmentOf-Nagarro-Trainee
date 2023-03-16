@@ -1,0 +1,33 @@
+<main id="main" class="d-flex justify-content-between m-3">
+    <div></div>
+    <div>
+        <button type="button" routerLink="/" class="btn btn-outline-success btn-lg border border-dark left">Logout</button>
+    </div>
+</main>
+
+
+<div class="conatiner d-flex flex-column align-items-center">
+    <div><h4 class="result">Result</h4></div>
+    <div>
+    <table class="table table-borderless">
+      <tbody>
+        <tr>
+          <th scope="row">Roll No : </th>
+          <td>{{result[0].rollNo}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Name : </th>
+          <td>{{result[0].name}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Date Of Birth : </th>
+          <td >{{result[0].dob| date: 'dd/MM/yyyy'}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Score : </th>
+          <td>{{result[0].score}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

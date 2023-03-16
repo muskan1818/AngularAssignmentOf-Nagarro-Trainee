@@ -1,0 +1,19 @@
+
+    <main class="d-flex flex-column justify-content-center align-items-center flex-wrap">
+        <div class="loginas">
+            <h5>Login As</h5>
+        </div>
+        <div class="d-flex">
+           <div style="margin-right: 2vw;">
+            <form [formGroup]="teacherPost" (ngSubmit)="teacherClicked()">
+                <input type="text" name="role" id="role" formControlName="role" hidden>
+                <button type="submit" class="btn btn-primary btn-lg border border-dark right">Teacher</button>
+            </form>
+            </div>
+            <div style="margin-right: 2vw;">
+            
+                <button routerLink="/student/search" type="submit" class="btn btn-primary btn-lg border border-dark right">Student</button>
+        
+        </div>
+        </div>
+    </main>

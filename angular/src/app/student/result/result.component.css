@@ -1,0 +1,20 @@
+
+button 
+{
+    padding: 7px 20px !important;
+    margin: 1vw !important;
+    border-radius: 5px !important;
+}
+.header-border
+{
+   border: 2px solid rgb(170, 211, 184);
+}
+th
+{
+    text-align: end;
+}
+.result
+{
+    position: relative;
+    right:3vw;
+}
